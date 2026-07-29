@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Physics Hub - Platform belajar fisika SMA modern, lengkap, dan interaktif." />
+  <title>Physics Hub | Belajar Fisika SMA</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <span class="logo-icon">⚛</span>
+        <span class="logo-text">Physics Hub</span>
+      </div>
+      <div class="loading-bar-container">
+        <div class="loading-bar" id="loading-bar"></div>
+      </div>
+      <p class="loading-text">Memuat konten fisika...</p>
+    </div>
+  </div>
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="back-to-top" class="back-to-top" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigasi utama">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="Physics Hub Home">
+        <span class="logo-icon">⚛</span>
+        <span>Physics Hub</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#materi" class="nav-link" data-section="materi">Materi</a></li>
+        <li><a href="#rumus" class="nav-link" data-section="rumus">Rumus</a></li>
+        <li><a href="#kalkulator" class="nav-link" data-section="kalkulator">Kalkulator</a></li>
+        <li><a href="#quiz" class="nav-link" data-section="quiz">Quiz</a></li>
+        <li><a href="#tentang" class="nav-link" data-section="tentang">Tentang</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Ganti tema" title="Ganti tema (Ctrl+D)">
+          <span class="theme-icon-dark">🌙</span>
+          <span class="theme-icon-light">☀️</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+      </div>
+      <div class="hero-content animate-on-scroll">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Fisika SMA — Lengkap &amp; Interaktif
+        </div>
+        <h1 id="hero-title" class="hero-title">
+          Kuasai <span class="gradient-text">Fisika</span><br/>dengan Cara Modern
+        </h1>
+        <p class="hero-desc">
+          Platform belajar fisika SMA terlengkap. Materi mendalam, kalkulator instan,
+          quiz interaktif, dan rumus lengkap — semua dalam satu tempat.
+        </p>
+        <div class="hero-actions">
+          <a href="#materi" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
+            Mulai Belajar
+          </a>
+          <a href="#quiz" class="btn btn-outline btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Coba Quiz
+          </a>
+        </div>
+        <div class="hero-stats" role="list">
+          <div class="stat-item" role="listitem">
+            <span class="stat-number" data-target="20">0</span>
+            <span class="stat-label">Bab Materi</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Rumus Fisika</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-number" data-target="9">0</span>
+            <span class="stat-label">Kalkulator</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit-container">
+          <div class="orbit orbit-1"><div class="electron"></div></div>
+          <div class="orbit orbit-2"><div class="electron"></div></div>
+          <div class="orbit orbit-3"><div class="electron"></div></div>
+          <div class="nucleus">
+            <span>Fe</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll ke bawah</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES STRIP ===== -->
+    <section class="features-strip animate-on-scroll" aria-label="Fitur utama">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <div class="feature-info">
+              <h3>Materi Lengkap</h3>
+              <p>20 bab fisika SMA dengan penjelasan mendalam</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🧮</div>
+            <div class="feature-info">
+              <h3>Kalkulator Instan</h3>
+              <p>9 kalkulator fisika siap pakai</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-info">
+              <h3>Quiz Interaktif</h3>
+              <p>Uji pemahaman dengan soal pilihan ganda</p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <div class="feature-info">
+              <h3>Lacak Progress</h3>
+              <p>Monitor materi yang sudah dipelajari</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MATERI SECTION ===== -->
+    <section id="materi" class="section materi-section" aria-labelledby="materi-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-badge">Materi Fisika</div>
+          <h2 id="materi-title" class="section-title">Semua Bab <span class="gradient-text">Lengkap</span></h2>
+          <p class="section-desc">Pilih bab yang ingin kamu pelajari. Setiap bab dilengkapi penjelasan, rumus, dan contoh soal.</p>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="materi-toolbar animate-on-scroll" role="search">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="search-input" class="search-input" placeholder="Cari materi fisika..." aria-label="Cari materi fisika" autocomplete="off" />
+            <button class="search-clear" id="search-clear" aria-label="Hapus pencarian" style="display:none">✕</button>
+          </div>
+          <!-- Progress Overview -->
+          <div class="progress-overview" aria-label="Progress belajar">
+            <span class="progress-label">Progress: <strong id="progress-count">0</strong>/20 bab</span>
+            <div class="progress-bar-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progress belajar">
+              <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layout: Sidebar + Content -->
+        <div class="materi-layout">
+          <!-- Sidebar -->
+          <aside class="materi-sidebar" id="materi-sidebar" aria-label="Daftar materi">
+            <ul class="sidebar-list" id="sidebar-list" role="list">
+              <!-- Generated by JS -->
+            </ul>
+          </aside>
+
+          <!-- Materi Content -->
+          <div class="materi-content" id="materi-content" role="region" aria-label="Konten materi">
+            <div class="materi-welcome" id="materi-welcome">
+              <div class="welcome-icon" aria-hidden="true">📖</div>
+              <h3>Pilih Materi</h3>
+              <p>Klik salah satu bab di sebelah kiri untuk mulai membaca. Kamu juga bisa menggunakan pencarian di atas.</p>
+            </div>
+            <article class="materi-detail" id="materi-detail" style="display:none" aria-live="polite">
+              <!-- Content injected by JS -->
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RUMUS SECTION ===== -->
+    <section id="rumus" class="section rumus-section" aria-labelledby="rumus-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-badge">Referensi Cepat</div>
+          <h2 id="rumus-title" class="section-title">Bank <span class="gradient-text">Rumus</span></h2>
+          <p class="section-desc">Semua rumus fisika SMA dikelompokkan per bab. Klik salin untuk menyalin rumus.</p>
+        </div>
+        <div class="rumus-filter animate-on-scroll" role="group" aria-label="Filter bab rumus">
+          <button class="filter-btn active" data-filter="all">Semua</button>
+          <button class="filter-btn" data-filter="mekanika">Mekanika</button>
+          <button class="filter-btn" data-filter="gelombang">Gelombang &amp; Optik</button>
+          <button class="filter-btn" data-filter="listrik">Listrik &amp; Magnet</button>
+          <button class="filter-btn" data-filter="modern">Fisika Modern</button>
+        </div>
+        <div class="rumus-grid" id="rumus-grid" aria-live="polite">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KALKULATOR SECTION ===== -->
+    <section id="kalkulator" class="section kalkulator-section" aria-labelledby="kalkulator-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-badge">Hitung Otomatis</div>
+          <h2 id="kalkulator-title" class="section-title">Kalkulator <span class="gradient-text">Fisika</span></h2>
+          <p class="section-desc">Masukkan nilai yang diketahui, hasil dihitung secara otomatis dan instan.</p>
+        </div>
+        <div class="calc-tabs animate-on-scroll" role="tablist" aria-label="Pilih kalkulator">
+          <button class="calc-tab active" data-calc="glb" role="tab" aria-selected="true" aria-controls="calc-panel-glb">GLB</button>
+          <button class="calc-tab" data-calc="glbb" role="tab" aria-selected="false" aria-controls="calc-panel-glbb">GLBB</button>
+          <button class="calc-tab" data-calc="newton" role="tab" aria-selected="false" aria-controls="calc-panel-newton">Newton</button>
+          <button class="calc-tab" data-calc="energi" role="tab" aria-selected="false" aria-controls="calc-panel-energi">Energi</button>
+          <button class="calc-tab" data-calc="momentum" role="tab" aria-selected="false" aria-controls="calc-panel-momentum">Momentum</button>
+          <button class="calc-tab" data-calc="tekanan" role="tab" aria-selected="false" aria-controls="calc-panel-tekanan">Tekanan</button>
+          <button class="calc-tab" data-calc="massa-jenis" role="tab" aria-selected="false" aria-controls="calc-panel-massa-jenis">Massa Jenis</button>
+          <button class="calc-tab" data-calc="daya" role="tab" aria-selected="false" aria-controls="calc-panel-daya">Daya</button>
+          <button class="calc-tab" data-calc="kalor" role="tab" aria-selected="false" aria-controls="calc-panel-kalor">Kalor</button>
+        </div>
+        <div class="calc-panels" id="calc-panels">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUIZ SECTION ===== -->
+    <section id="quiz" class="section quiz-section" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-badge">Uji Kemampuan</div>
+          <h2 id="quiz-title" class="section-title">Quiz <span class="gradient-text">Interaktif</span></h2>
+          <p class="section-desc">Uji pemahaman fisikamu dengan 10 soal pilihan ganda. Pembahasan lengkap di akhir.</p>
+        </div>
+        <div class="quiz-container animate-on-scroll" id="quiz-container">
+          <div class="quiz-start" id="quiz-start">
+            <div class="quiz-start-icon" aria-hidden="true">🎯</div>
+            <h3>Siap Mengikuti Quiz?</h3>
+            <p>10 soal pilihan ganda dari berbagai bab fisika SMA. Kerjakan sebaik mungkin!</p>
+            <div class="quiz-info-grid" role="list">
+              <div class="quiz-info-item" role="listitem"><span class="info-icon">❓</span><span>10 Soal</span></div>
+              <div class="quiz-info-item" role="listitem"><span class="info-icon">📝</span><span>Pilihan Ganda</span></div>
+              <div class="quiz-info-item" role="listitem"><span class="info-icon">⭐</span><span>Nilai Otomatis</span></div>
+              <div class="quiz-info-item" role="listitem"><span class="info-icon">💡</span><span>Ada Pembahasan</span></div>
+            </div>
+            <button class="btn btn-primary btn-lg" id="start-quiz-btn">
+              Mulai Quiz
+            </button>
+          </div>
+          <div class="quiz-game" id="quiz-game" style="display:none">
+            <div class="quiz-header">
+              <div class="quiz-progress-text">
+                Soal <span id="q-current">1</span> dari <span id="q-total">10</span>
+              </div>
+              <div class="quiz-progress-bar-container" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="10" aria-label="Progress quiz">
+                <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+              </div>
+              <div class="quiz-score-display">Skor: <span id="live-score">0</span></div>
+            </div>
+            <div class="quiz-question-card" id="quiz-question-card" aria-live="polite">
+              <p class="question-text" id="question-text"></p>
+              <div class="options-grid" id="options-grid" role="group" aria-label="Pilihan jawaban">
+                <!-- Generated by JS -->
+              </div>
+            </div>
+            <button class="btn btn-primary" id="next-quiz-btn" style="display:none">
+              Soal Berikutnya →
+            </button>
+          </div>
+          <div class="quiz-result" id="quiz-result" style="display:none">
+            <!-- Generated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TENTANG SECTION ===== -->
+    <section id="tentang" class="section tentang-section" aria-labelledby="tentang-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-badge">Tentang Kami</div>
+          <h2 id="tentang-title" class="section-title">Kenapa <span class="gradient-text">Physics Hub?</span></h2>
+        </div>
+        <div class="tentang-grid animate-on-scroll">
+          <div class="tentang-card">
+            <div class="tentang-icon" aria-hidden="true">🎓</div>
+            <h3>Untuk Pelajar SMA</h3>
+            <p>Dirancang khusus untuk kurikulum fisika SMA Indonesia. Materi sesuai standar Kemendikbud.</p>
+          </div>
+          <div class="tentang-card">
+            <div class="tentang-icon" aria-hidden="true">⚡</div>
+            <h3>Cepat &amp; Mudah</h3>
+            <p>Antarmuka modern yang intuitif. Belajar kapanpun dan dimanapun tanpa hambatan.</p>
+          </div>
+          <div class="tentang-card">
+            <div class="tentang-icon" aria-hidden="true">🔬</div>
+            <h3>Berbasis Sains</h3>
+            <p>Setiap konten diverifikasi secara ilmiah. Rumus dan penjelasan akurat dan terpercaya.</p>
+          </div>
+          <div class="tentang-card">
+            <div class="tentang-icon" aria-hidden="true">🆓</div>
+            <h3>Sepenuhnya Gratis</h3>
+            <p>Akses semua fitur tanpa biaya. Tidak perlu daftar akun untuk mulai belajar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo" aria-label="Physics Hub">
+            <span class="logo-icon">⚛</span>
+            <span>Physics Hub</span>
+          </a>
+          <p>Platform belajar fisika SMA modern, lengkap, dan interaktif. Tersedia gratis untuk semua pelajar Indonesia.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <ul role="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#materi">Materi</a></li>
+            <li><a href="#rumus">Rumus</a></li>
+            <li><a href="#kalkulator">Kalkulator</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Materi Populer</h4>
+          <ul role="list">
+            <li><a href="#materi" data-open-materi="0">Besaran &amp; Satuan</a></li>
+            <li><a href="#materi" data-open-materi="5">Hukum Newton</a></li>
+            <li><a href="#materi" data-open-materi="6">Usaha &amp; Energi</a></li>
+            <li><a href="#materi" data-open-materi="12">Gelombang</a></li>
+            <li><a href="#materi" data-open-materi="15">Listrik Dinamis</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontak</h4>
+          <p>📧 Azizjusveenrahman@gmail.com</p>
+          <p>🌐 www.physicshub.id</p>
+          <p>📱 Instagram: @Jusveennn</p>
+          <div class="keyboard-shortcuts">
+            <h5>Pintasan Keyboard</h5>
+            <div class="shortcut-item"><kbd>Ctrl</kbd>+<kbd>D</kbd> <span>Ganti tema</span></div>
+            <div class="shortcut-item"><kbd>Ctrl</kbd>+<kbd>F</kbd> <span>Cari materi</span></div>
+            <div class="shortcut-item"><kbd>Ctrl</kbd>+<kbd>↑</kbd> <span>Ke atas</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year">2024</span> Physics Hub. Dibuat dengan ❤️ untuk pelajar Indonesia.</p>
+        <p class="footer-version">Versi 1.0.0 · Fisika SMA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
